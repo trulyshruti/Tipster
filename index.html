@@ -111,15 +111,13 @@
 				setValues(a, b, c, d);
 			}
 
-			function getTip() {
-				return tip;
+			function setTotal(theTotal) {
+				var realTotal = parseInt(theTotal);
+				total = (realTotal) + (realTotal*tip);
 			}
 
-			function setTotal(realTotal) {
-				total = realTotal + (realTotal*tip);
-			}
-
-			function setParty(realParty) {
+			function setParty(theParty) {
+				var realParty = parseInt(theParty);
 				party = realParty;
 			}
 
@@ -257,16 +255,20 @@
 					<h2> What is your <br /> total cost? </h2>
 
 					<form id="total-cost">
-						<input id="#cost" type=""></input> <br /> <br />
+						<input id="cost" type=""></input> <br /> <br /> 
 						<button class="btn btn-large btn-primary" id="total">That much</button> <br /> <br />
 					</form>
 
 					<script>
 
+						$("#cost").keyup(function () {
+					    	var value = $(this).val();
+					    	bill = value;
+					    }).keyup();
+
 						$("#total").click(function() {
-							bill = $("#party-number").val();
 							setTotal(bill);
-							$("#party span").html("" + total);
+							$("#party span").html("" + total.toFixed(2));
 
 			 				$('#div3').hide();
 							$('#div4').show();
@@ -290,14 +292,22 @@
 					<h2> How many people are <br /> in your party? </h2>
 
 					<form id="party-size">
-						<input id="#party-number" type=""></input> <br /> <br /> 
+						<input id="#how-many" type=""></input> <br /> <br /> 
 						<button class="btn btn-large btn-primary" id="size" type="submit">That many</button> <br /> <br />
 					</form>
 
 					<script>
 
+						$("how-many").keyup(function () {
+					    	var value = $(this).val();
+					    	party = value;
+					    }).keyup();
+
+					    setParty(party);
+					    setYours();
+
 						$("#size").click(function() {
-			 				$("#party-number").val(party);
+			 				$("#payment span").html("" + yours.toFixed(2));
 			 				$('#div4').hide();
 							$('#div5').show();
 						});
@@ -307,6 +317,69 @@
 						});
 
 					</script>
+
+				</div>
+
+			</div>
+
+			<div id="div5" style="display:none;">
+
+				<div id="payment">
+
+					<h2> Your share is <br /> $<span></span> with the tips. </h2> 
+					<h2> Want to pay <br /> with Venmo? </h2>
+
+					<form id="pay-with-venmo">
+						<button class="btn btn-large btn-primary" id="venmo" type="submit">Sure</button> <br /> <br />
+						<button class="btn btn-large btn-primary" id="no-venmo" type="submit">Nope</button> <br /> <br />
+					</form>
+
+					<script>
+
+						$("#venmo").click(function() {
+							window.location = "http://venmo.com";
+						});
+
+						$("no-venmo").click(function(){
+							$("#finish span").html("" + yours.toFixed(2));
+							div5.hide();
+							div6.show();
+						});
+
+						$('#pay-with-venmo').submit(function () {
+							return false;
+						});
+
+					</script>
+
+				</div>
+
+				<div id="div6" style="display:none;">
+
+					<div id="finish">
+
+						<h2> Cool! You're done. </h2>
+						<h2> Pay your $<span></span> now. </h2>
+
+						<form id="resubmit">
+							<button class="btn btn-large btn-primary" id="reset" type="reset">Start Over</button> <br /> <br />
+						</form>
+
+						<script>
+
+							$("#reset").click(function() {
+								div6.hide();
+								div1.show();
+							});
+
+							$('#resubmit').submit(function () {
+								return false;
+							});
+
+
+						</script>
+
+					</div>
 
 				</div>
 
