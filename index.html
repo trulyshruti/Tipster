@@ -308,6 +308,7 @@
 
 						$("#size").click(function() {
 			 				$("#payment span").html("" + yours.toFixed(2));
+			 				$("#finish span").html("" + yours.toFixed(2));
 			 				$('#div4').hide();
 							$('#div5').show();
 						});
@@ -331,7 +332,12 @@
 
 					<form id="pay-with-venmo">
 						<button class="btn btn-large btn-primary" id="venmo" type="submit">Sure</button> <br /> <br />
-						<button class="btn btn-large btn-primary" id="no-venmo" type="submit">Nope</button> <br /> <br />
+					</form>
+
+					<h2> If not, you're done! </h2>
+
+					<form id="start-over">
+						<button class="btn btn-large btn-primary" id="no-venmo" type="submit">Start over</button> <br /> <br />
 					</form>
 
 					<script>
@@ -341,9 +347,8 @@
 						});
 
 						$("#no-venmo").click(function(){
-							$("#finish span").html("" + yours.toFixed(2));
 							$('#div5').hide();
-							$('#div6').show();
+							$('#div0').show();
 						});
 
 						$('#pay-with-venmo').submit(function () {
@@ -356,9 +361,9 @@
 
 				<div id="div6" style="display:none;">
 
-					<div id="finish">
+					<div id="finish"> 
 
-						<h2> Cool! You're done. </h2>
+						<h2> Cool! You're all done. </h2>
 						<h2> Pay your $<span></span> now. </h2>
 
 						<form id="resubmit">
