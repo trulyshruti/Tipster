@@ -298,15 +298,18 @@
 
 					<script>
 
-						$("how-many").keyup(function () {
+						$("#how-many").keyup(function () {
 					    	var value = $(this).val();
 					    	party = value;
-					    }).keyup();
-
-					    setParty(party);
-					    setYours();
+					    }).keyup();					    
 
 						$("#size").click(function() {
+			 				setParty(party);
+					    	setYours();
+
+					    	console.log(party);
+					    	console.log(yours);
+
 			 				$("#payment span").html("" + yours.toFixed(2));
 			 				$("#finish span").html("" + yours.toFixed(2));
 			 				$('#div4').hide();
@@ -378,7 +381,6 @@
 						$('#resubmit').submit(function () {
 							return false;
 						});
-
 
 					</script>
 
