@@ -264,7 +264,7 @@
 					<script>
 
 						$("#total").click(function() {
-							$("#party-number").val(bill);
+							bill = $("#party-number").val();
 							setTotal(bill);
 							$("#party span").html("" + total);
 
@@ -289,20 +289,20 @@
 					<h2> Your total cost is <br /> $<span></span> with the tips. </h2> 
 					<h2> How many people are <br /> in your party? </h2>
 
-					<form id="total-cost">
-						<input id="#party-number" type=""></input> <br />
-						<button class="btn btn-large btn-primary" id="total" type="submit">That many</button> <br /> <br />
+					<form id="party-size">
+						<input id="#party-number" type=""></input> <br /> <br /> 
+						<button class="btn btn-large btn-primary" id="size" type="submit">That many</button> <br /> <br />
 					</form>
 
 					<script>
 
-						$("#total").click(function() {
+						$("#size").click(function() {
 			 				$("#party-number").val(party);
 			 				$('#div4').hide();
 							$('#div5').show();
 						});
 
-						$('#total-cost').submit(function () {
+						$('#party-size').submit(function () {
 							return false;
 						});
 
