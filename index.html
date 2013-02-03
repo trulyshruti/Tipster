@@ -114,6 +114,8 @@
 
 		<center>
 
+			<div id="container"> </div>
+
 			<div id="philosophy">
 				<form id="tipping-style">
 					<h2> What's your <br /> tipping style? </h2> <br />
@@ -174,6 +176,20 @@
 		 				niceness(4);
 					});
 				</script>
+
+			</div>
+
+			<div id="tip-amount">
+
+				<div id="percent">
+
+					<h2> You will tip <span></span>% <br /> for your service. </h2>
+
+					<script>
+						$("#percent span").html("" + (tip*100));
+					</script>
+
+				</div>
 
 			</div>
 
