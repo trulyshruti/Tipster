@@ -106,6 +106,10 @@
 				setValues(a, b, c, d);
 			}
 
+			function getTip() {
+				return tip;
+			}
+
 		</script>
 
 		<script>
@@ -152,26 +156,26 @@
 
 					$("#generous").click(function() {
 						style(1);
-						$('#div1').toggle();
-						$('#div2').toggle();
+						$('#div1').hide();
+						$('#div2').show();
 					});
 
 					$("#average").click(function() {
 						style(2);
-						$('#div1').toggle();
-						$('#div2').toggle();
+						$('#div1').hide();
+						$('#div2').show();
 					});
 
 					$("#stingy").click(function() {
 		 				style(3);
-		 				$('#div1').toggle();
-						$('#div2').toggle();
+		 				$('#div1').hide();
+						$('#div2').show();
 					});
 
 					$("#custom").click(function() {
 		 				style(4);
-		 				$('#div1').toggle();
-						$('#div2').toggle();
+		 				$('#div1').hide();
+						$('#div2').show();
 					});
 
 					$('#tipping-style').submit(function () {
@@ -194,27 +198,30 @@
 
 					$("#fantastic").click(function() {
 						niceness(1);
-						console.log(tip);
-						$('#div2').toggle();
-						$('#div3').toggle();
+						$("#percent span").html("" + (tip*100));
+						$('#div2').hide();
+						$('#div3').show();
 					});
 
 					$("#great").click(function() {
 						niceness(2);
-						$('#div2').toggle();
-						$('#div3').toggle();
+						$("#percent span").html("" + (tip*100));
+						$('#div2').hide();
+						$('#div3').show();
 					});
 
 					$("#okay").click(function() {
 		 				niceness(3);
-		 				$('#div2').toggle();
-						$('#div3').toggle();
+		 				$("#percent span").html("" + (tip*100));
+		 				$('#div2').hide();
+						$('#div3').show();
 					});
 
 					$("#horrid").click(function() {
 		 				niceness(4);
-		 				$('#div2').toggle();
-						$('#div3').toggle();
+		 				$("#percent span").html("" + (tip*100));
+		 				$('#div2').hide();
+						$('#div3').show();
 					});
 
 					$('#service-type').submit(function () {
@@ -232,7 +239,7 @@
 					<h2> You will tip <span></span>% <br /> for your service. </h2>
 
 					<script>
-						$("#percent span").html("" + (tip*100));
+						
 					</script>
 
 				</div>
