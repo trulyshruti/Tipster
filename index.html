@@ -113,7 +113,9 @@
 
 			function setTotal(theTotal) {
 				var realTotal = parseInt(theTotal);
+				console.log(realTotal);
 				total = (realTotal) + (realTotal*tip);
+				console.log(total);
 			}
 
 			function setParty(theParty) {
@@ -270,6 +272,9 @@
 							setTotal(bill);
 							$("#party span").html("" + total.toFixed(2));
 
+							console.log(bill);
+							console.log(total);
+
 			 				$('#div3').hide();
 							$('#div4').show();
 						});
@@ -299,8 +304,8 @@
 					<script>
 
 						$("#how-many").keyup(function () {
-					    	var value = $(this).val();
-					    	party = value;
+					    	var number = $(this).val();
+					    	party = number;
 					    }).keyup();					    
 
 						$("#size").click(function() {
