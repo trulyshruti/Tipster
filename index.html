@@ -128,7 +128,7 @@
 
 			<div id="div0"> 
 
-				<h2> Hi there! I'm Tipster <br />
+				<h2> Hi there! I'm Tipster. <br />
 					Need to know <br /> how much to tip? <br />
 					I'm here to help! </h2> <br /> 
 				<button class="showSingle btn btn-large btn-primary" id="go"> Let's go! </button> <br /> <br/>
@@ -198,28 +198,28 @@
 
 					$("#fantastic").click(function() {
 						niceness(1);
-						$("#percent span").html("" + (tip*100));
+						$("#percent span").html("" + (tip*100).toFixed(0));
 						$('#div2').hide();
 						$('#div3').show();
 					});
 
 					$("#great").click(function() {
 						niceness(2);
-						$("#percent span").html("" + (tip*100));
+						$("#percent span").html("" + (tip*100).toFixed(0));
 						$('#div2').hide();
 						$('#div3').show();
 					});
 
 					$("#okay").click(function() {
 		 				niceness(3);
-		 				$("#percent span").html("" + (tip*100));
+		 				$("#percent span").html("" + (tip*100).toFixed(0));
 		 				$('#div2').hide();
 						$('#div3').show();
 					});
 
 					$("#horrid").click(function() {
 		 				niceness(4);
-		 				$("#percent span").html("" + (tip*100));
+		 				$("#percent span").html("" + (tip*100).toFixed(0));
 		 				$('#div2').hide();
 						$('#div3').show();
 					});
@@ -239,7 +239,7 @@
 					<h2> You will tip <span></span>% <br /> for your service. </h2>
 
 					<script>
-						
+
 					</script>
 
 				</div>
