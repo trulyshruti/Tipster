@@ -39,6 +39,9 @@
 
 	    </style>
 
+	    <!-- <script src="js/bootstrap.min.js"></script> -->
+		<script src="js/jquery-1.9.0.min.js"></script>
+
 		<script>
 		
 			var tip = 0.15;		
@@ -55,18 +58,18 @@
 				horrid = hor;
 			}
 
-			function method(philosophy) {
+			function style(philosophy) {
 				switch(philosophy) {
-					case "generous": 
+					case 1: 
 						setValues(0.25, 0.20, 0.15, 0.10);
 						break;
-					case "average": 
+					case 2: 
 						setValues(0.20, 0.15, 0.10, 0.05);
 						break;
-					case "stingy": 
+					case 3: 
 						setValues(0.15, 0.10, 0.07, 0.05);
 						break;
-					case "custom":
+					case 4:
 						setCustom();
 						break;
 					default: 
@@ -75,18 +78,18 @@
 				}
 			}
 
-			function style(quality) {
+			function niceness(quality) {
 				switch(quality) {
-					case "fantastic": 
+					case 1: 
 						tip = fantastic;
 						break;
-					case "great":
+					case 2:
 						tip = great;
 						break;
-					case "okay":
+					case 3:
 						tip = okay;
 						break;
-					case "horrid":
+					case 4:
 						tip = horrid;
 						break;
 					default: 
@@ -95,7 +98,7 @@
 				}
 			}
 
-			function setCustom(); {
+			function setCustom() {
 				var a = 0.0;
 				var b = 0.0; 
 				var c = 0.0;
@@ -103,10 +106,7 @@
 				setValues(a, b, c, d);
 			}
 
-
 		</script>
-
-		<script src="js/bootstrap.min.js"></script>
 
 	</head>
 
@@ -122,7 +122,34 @@
 	       			<button class="btn btn-large btn-primary" id="stingy" type="submit">Stingy</button> <br /> <br />
 	       			<button class="btn btn-large btn-primary" id="custom" type="submit">Custom</button> <br /> <br />
 				</form>
+
+				<script>
+					$("#generous").click(function() {
+						style(1);
+					});
+					$("#average").click(function() {
+						style(2);
+					});
+					$("#stingy").click(function() {
+		 				style(3);
+					});
+					$("#custom").click(function() {
+		 				style(4);
+					});
+				</script>
 			</div>
+
+		<!--
+			<div id="custom">
+				<form id="tipping-style">
+					<h2> How much would <br /> you like to tip? </h2> <br />
+					<button class="btn btn-large btn-primary" id="generous" type="submit">Generous</button> <br /> <br />
+	       			<button class="btn btn-large btn-primary" id="average" type="submit">Average</button> <br /> <br />
+	       			<button class="btn btn-large btn-primary" id="stingy" type="submit">Stingy</button> <br /> <br />
+	       			<button class="btn btn-large btn-primary" id="custom" type="submit">Custom</button> <br /> <br />
+				</form>
+			</div>
+		-->
 
 			<div id="quality">
 				<form id="tipping-style">
@@ -132,6 +159,22 @@
 	       			<button class="btn btn-large btn-primary" id="okay" type="submit">Okay</button> <br /> <br />
 	       			<button class="btn btn-large btn-primary" id="horrid" type="submit">Horrid</button> <br /> <br />
 				</form>
+
+				<script>
+					$("#fantastic").click(function() {
+						niceness(1);
+					});
+					$("#great").click(function() {
+						niceness(2);
+					});
+					$("#okay").click(function() {
+		 				niceness(3);
+					});
+					$("#horrid").click(function() {
+		 				niceness(4);
+					});
+				</script>
+
 			</div>
 
 		</center>
