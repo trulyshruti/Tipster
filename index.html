@@ -41,7 +41,6 @@
 
 	    <!-- <script src="js/bootstrap.min.js"></script> -->
 		<script src="js/jquery-1.9.0.min.js"></script>
-		<script src="js/showHide.js"></script>
 
 		<script>
 		
@@ -128,7 +127,7 @@
 				<h2> Hi there! I'm Tipster <br />
 					Need to know <br /> how much to tip? <br />
 					I'm here to help! </h2> <br /> 
-				<button class="showSingle btn btn-large btn-primary" id="go" type="submit" data-target="1"> Let's go! </button> <br /> <br/>
+				<button class="showSingle btn btn-large btn-primary" id="go"> Let's go! </button> <br /> <br/>
 
 				<script>
 					$("#go").click(function() {
@@ -144,77 +143,84 @@
 				<form id="tipping-style">
 					<h2> What's your <br /> tipping style? </h2> <br />
 					<button class="btn btn-large btn-primary" id="generous" type="submit">Generous</button> <br /> <br />
-	       			<button class="btn btn-large btn-primary" id="average" type="submit">Average</button> <br /> <br />
-	       			<button class="btn btn-large btn-primary" id="stingy" type="submit">Stingy</button> <br /> <br />
-	       			<!-- <button class="btn btn-large btn-primary" id="custom" type="submit">Custom</button> <br /> <br /> -->
+	       			<button class="btn btn-large btn-primary" id="average">Average</button> <br /> <br />
+	       			<button class="btn btn-large btn-primary" id="stingy">Stingy</button> <br /> <br />
+	       			<button class="btn btn-large btn-primary" id="custom">No Tip</button> <br /> <br />
 				</form>
 
 				<script>
+
 					$("#generous").click(function() {
 						style(1);
 						$('#div1').toggle();
 						$('#div2').toggle();
 					});
+
 					$("#average").click(function() {
 						style(2);
 						$('#div1').toggle();
 						$('#div2').toggle();
 					});
+
 					$("#stingy").click(function() {
 		 				style(3);
 		 				$('#div1').toggle();
 						$('#div2').toggle();
 					});
+
 					$("#custom").click(function() {
 		 				style(4);
 		 				$('#div1').toggle();
 						$('#div2').toggle();
 					});
+
+					$('#tipping-style').submit(function () {
+						return false;
+					});
+
 				</script>
 			</div>
 
-		<!--
-			<div id="divc"  style="display:none;">
-				<form id="tipping-style">
-					<h2> How much would <br /> you like to tip? </h2> <br />
-					<button class="btn btn-large btn-primary" id="generous" type="submit">Generous</button> <br /> <br />
-	       			<button class="btn btn-large btn-primary" id="average" type="submit">Average</button> <br /> <br />
-	       			<button class="btn btn-large btn-primary" id="stingy" type="submit">Stingy</button> <br /> <br />
-	       			<button class="btn btn-large btn-primary" id="custom" type="submit">Custom</button> <br /> <br />
-				</form>
-			</div>
-		-->
-
 			<div id="div2" style="display:none;">
-				<form id="tipping-style">
+				<form id="service-type">
 					<h2> How good was <br /> your service? </h2> <br />
-					<button class="btn btn-large btn-primary" id="fantastic" type="submit">Fantastic</button> <br /> <br />
-	       			<button class="btn btn-large btn-primary" id="great" type="submit">Great</button> <br /> <br />
-	       			<button class="btn btn-large btn-primary" id="okay" type="submit">Okay</button> <br /> <br />
-	       			<button class="btn btn-large btn-primary" id="horrid" type="submit">Horrid</button> <br /> <br />
+					<button class="btn btn-large btn-primary" id="fantastic">Fantastic</button> <br /> <br />
+	       			<button class="btn btn-large btn-primary" id="great">Great</button> <br /> <br />
+	       			<button class="btn btn-large btn-primary" id="okay">Okay</button> <br /> <br />
+	       			<button class="btn btn-large btn-primary" id="horrid">Horrid</button> <br /> <br />
 				</form>
 
 				<script>
+
 					$("#fantastic").click(function() {
 						niceness(1);
+						console.log(tip);
 						$('#div2').toggle();
 						$('#div3').toggle();
 					});
+
 					$("#great").click(function() {
 						niceness(2);
 						$('#div2').toggle();
 						$('#div3').toggle();
 					});
+
 					$("#okay").click(function() {
 		 				niceness(3);
 		 				$('#div2').toggle();
 						$('#div3').toggle();
 					});
+
 					$("#horrid").click(function() {
 		 				niceness(4);
 		 				$('#div2').toggle();
 						$('#div3').toggle();
 					});
+
+					$('#service-type').submit(function () {
+						return false;
+					});
+
 				</script>
 
 			</div>
