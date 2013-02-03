@@ -332,12 +332,7 @@
 
 					<form id="pay-with-venmo">
 						<button class="btn btn-large btn-primary" id="venmo" type="submit">Sure</button> <br /> <br />
-					</form>
-
-					<h2> If not, you're done! </h2>
-
-					<form id="start-over">
-						<button class="btn btn-large btn-primary" id="no-venmo" type="submit">Start over</button> <br /> <br />
+						<button class="btn btn-large btn-primary" id="no-venmo" type="submit">Nope</button> <br /> <br />
 					</form>
 
 					<script>
@@ -348,7 +343,7 @@
 
 						$("#no-venmo").click(function(){
 							$('#div5').hide();
-							$('#div0').show();
+							$('#div6').show();
 						});
 
 						$('#pay-with-venmo').submit(function () {
@@ -359,32 +354,33 @@
 
 				</div>
 
-				<div id="div6" style="display:none;">
-
-					<div id="finish"> 
-
-						<h2> Cool! You're all done. </h2>
-						<h2> Pay your $<span></span> now. </h2>
-
-						<form id="resubmit">
-							<button class="btn btn-large btn-primary" id="new" type="reset">Start Over</button> <br /> <br />
-						</form>
-
-						<script>
-
-							$("#new").click(function() {
-								div6.hide();
-								div1.show();
-							});
-
-							$('#resubmit').submit(function () {
-								return false;
-							});
+			</div>
 
 
-						</script>
+			<div id="div6" style="display:none;">
 
-					</div>
+				<div id="finish"> 
+
+					<h2> Cool! You're all done. </h2>
+					<h2> Pay your $<span></span> now. </h2>
+
+					<form id="resubmit">
+						<button class="btn btn-large btn-primary" id="new" type="reset">Start Over</button> <br /> <br />
+					</form>
+
+					<script>
+
+						$("#new").click(function() {
+							$('#div6').hide();
+							$('#div0').show();
+						});
+
+						$('#resubmit').submit(function () {
+							return false;
+						});
+
+
+					</script>
 
 				</div>
 
