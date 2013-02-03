@@ -340,10 +340,10 @@
 							window.location = "http://venmo.com";
 						});
 
-						$("no-venmo").click(function(){
+						$("#no-venmo").click(function(){
 							$("#finish span").html("" + yours.toFixed(2));
-							div5.hide();
-							div6.show();
+							$('#div5').hide();
+							$('#div6').show();
 						});
 
 						$('#pay-with-venmo').submit(function () {
@@ -362,12 +362,12 @@
 						<h2> Pay your $<span></span> now. </h2>
 
 						<form id="resubmit">
-							<button class="btn btn-large btn-primary" id="reset" type="reset">Start Over</button> <br /> <br />
+							<button class="btn btn-large btn-primary" id="new" type="reset">Start Over</button> <br /> <br />
 						</form>
 
 						<script>
 
-							$("#reset").click(function() {
+							$("#new").click(function() {
 								div6.hide();
 								div1.show();
 							});
