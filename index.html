@@ -51,6 +51,11 @@
 			var okay = 0.15;
 			var horrid = 0.10;
 
+			var bill = 0;
+			var total = 0;
+			var party = 0;
+			var yours = 0;
+
 			function setValues(fan, gr8, ok, hor) {
 				fantastic = fan;
 				great = gr8;
@@ -108,6 +113,18 @@
 
 			function getTip() {
 				return tip;
+			}
+
+			function setTotal(realTotal) {
+				total = realTotal + (realTotal*tip);
+			}
+
+			function setParty(realParty) {
+				party = realParty;
+			}
+
+			function setYours() {
+				yours = total / party;
 			}
 
 		</script>
@@ -239,7 +256,55 @@
 					<h2> You will tip <span></span>% <br /> for your service. </h2> 
 					<h2> What is your <br /> total cost? </h2>
 
+					<form id="total-cost">
+						<input id="#cost" type=""></input> <br /> <br />
+						<button class="btn btn-large btn-primary" id="total">That much</button> <br /> <br />
+					</form>
+
 					<script>
+
+						$("#total").click(function() {
+							$("#party-number").val(bill);
+							setTotal(bill);
+							$("#party span").html("" + total);
+
+			 				$('#div3').hide();
+							$('#div4').show();
+						});
+
+						$('#total-cost').submit(function () {
+							return false;
+						});
+
+					</script>
+
+				</div>
+
+			</div>
+
+			<div id="div4" style="display:none;">
+
+				<div id="party">
+
+					<h2> Your total cost is <br /> $<span></span> with the tips. </h2> 
+					<h2> How many people are <br /> in your party? </h2>
+
+					<form id="total-cost">
+						<input id="#party-number" type=""></input> <br />
+						<button class="btn btn-large btn-primary" id="total" type="submit">That many</button> <br /> <br />
+					</form>
+
+					<script>
+
+						$("#total").click(function() {
+			 				$("#party-number").val(party);
+			 				$('#div4').hide();
+							$('#div5').show();
+						});
+
+						$('#total-cost').submit(function () {
+							return false;
+						});
 
 					</script>
 
